@@ -11,7 +11,7 @@
 
 ```
 -a --appendLog     When generating a debug logfile, do not overwrite the content
-                   of the current log. Use in conjuction with -d and -l options.
+                   of the current log. Use in conjunction with -d and -l options.
 
 -c --config        Specify the test configuration file to use. This is a mandatory
                    field for test execution.

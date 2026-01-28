@@ -178,7 +178,7 @@ Command line options take precedence over the same parameters set in the configu
 <table class="table table--middle-left">
 <tr><th class="head">Short option</th><th class="head">Long option</th><th class="head"> Description</th></tr>
 <tr><td>-a</td><td>--appendLog</td><td>When generating a debug logfile, do not overwrite the content
-of the current log. Use in conjuction with <b>-d</b> and <b>-l</b> options.
+of the current log. Use in conjunction with <b>-d</b> and <b>-l</b> options.
 </td></tr>
 
 <tr><td>-c</td><td>--config</td><td>Specify the test configuration file to use.

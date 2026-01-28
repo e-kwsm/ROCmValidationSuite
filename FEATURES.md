@@ -57,7 +57,7 @@ The Memory module tests the GPU memory for hard and soft errors using HIP. It co
 The Babel module executes BabelStream (synthetic GPU benchmark based on the original STREAM benchmark for CPUs) benchmark that measures memory transfer rates (bandwidth) to and from global device memory. Various benchmark tests are implemented using GPU kernels in HIP (Heterogeneous Interface for Portability) programming language.
 
 ## Thermal Stress Test - TST module
-The Thermal Stress Test (TST) measures/monitors the GPU edge and junction temperatures under various stressful workloads. Also checks whether GPU junction temperature reaches target and trottle temperatures.
+The Thermal Stress Test (TST) measures/monitors the GPU edge and junction temperatures under various stressful workloads. Also checks whether GPU junction temperature reaches target and throttle temperatures.
 
 ## Pulse Stress Test- Pulse module
 The Pulse Stress Test creates power fluctuations by alternating between high-compute (GEMM) and idle phases at a configurable rate. Two-level barrier synchronizes all GPUs so they spike current simultaneously, maximizing stress on the PSU.
