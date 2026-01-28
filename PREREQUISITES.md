@@ -12,7 +12,7 @@ system:
 
 ## GCC
 GCC 5.4.0 or later should already be installed on your system.
-If not, refere to GCC installation instructions.
+If not, refer to GCC installation instructions.
 
 ## ROCm 1.8
 Please install following ROCm installation instructions.
