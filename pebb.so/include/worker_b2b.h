@@ -84,14 +84,14 @@ class pebbworker_b2b : public pebbworker {
   //! default constructor
   pebbworker_b2b();
   //! default destructor
-  virtual ~pebbworker_b2b();
+  ~pebbworker_b2b() override;
 
   int initialize(uint16_t iSrc, uint16_t iDst, bool h2d, bool d2h, size_t Size);
   //! Set back-to-back block size
   void set_b2b_block_sizes(const size_t val) { b2b_block_size = val; }
 
  protected:
-  virtual void run(void);
+  void run(void) override;
   void deinit();
 
  protected:

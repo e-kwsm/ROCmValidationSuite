@@ -39,7 +39,7 @@ class ext_thread : public rvs::ThreadBase {
   // duration of the thread
   int wait_ms = 1000;
   // run override
-  void run() {
+  void run() override {
     std::this_thread::sleep_for(std::chrono::milliseconds(wait_ms));
     finished = 1;
   }

@@ -40,7 +40,7 @@ namespace rvs {
  */
 class if0 : public ifbase {
  public:
-  virtual ~if0();
+  ~if0() override;
   virtual const char*  get_description(void);
   virtual const char*  get_config(void);
   virtual const char*  get_output(void);
@@ -50,7 +50,7 @@ class if0 : public ifbase {
   if0(const if0&);
 
   virtual if0& operator= (const if0& rhs);
-  virtual ifbase* clone(void);
+  ifbase* clone(void) override;
 
  protected:
   //! Pointer to module function returning module description

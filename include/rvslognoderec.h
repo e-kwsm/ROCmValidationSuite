@@ -44,10 +44,10 @@ class LogNodeRec : public LogNode {
  public:
   LogNodeRec(const char* Name, int LogLevel, unsigned Sec,
              unsigned uSec, const LogNodeBase* Parent = nullptr);
-  virtual ~LogNodeRec();
+  ~LogNodeRec() override;
 
-  virtual std::string ToJson(const std::string& Lead = "");
-  virtual int LogLevel();
+  std::string ToJson(const std::string& Lead = "") override;
+  int LogLevel() override;
  protected:
   //! Logging Level
   int Level;
