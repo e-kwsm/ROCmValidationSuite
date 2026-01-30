@@ -47,9 +47,9 @@ using std::string;
 class gpup_action : public rvs::actionbase {
  public:
     gpup_action();
-    virtual ~gpup_action();
+    ~gpup_action() override;
 
-    virtual int run(void);
+    int run(void) override;
  protected:
     //! the list of all gpu_id in the 'device' property
     vector<string> gpus_id;

@@ -85,14 +85,14 @@ class pbqtworker_b2b : public pbqtworker {
   //! default constructor
   pbqtworker_b2b();
   //! default destructor
-  virtual ~pbqtworker_b2b();
+  ~pbqtworker_b2b() override;
 
   int initialize(int iSrc, int iDst, bool Bidirect, size_t Size);
   //! Set back-to-back block size
   void set_b2b_block_sizes(const size_t val) { b2b_block_size = val; }
 
  protected:
-  virtual void run(void);
+  void run(void) override;
   void deinit();
 
  protected:

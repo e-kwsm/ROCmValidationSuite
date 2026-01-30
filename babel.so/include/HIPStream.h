@@ -64,19 +64,19 @@ class HIPStream : public Stream<T>
         const unsigned int, const unsigned int, const unsigned int,
         const std::string& nontemporal = "all",
         const std::string& read_kernel = "default");
-    ~HIPStream();
+    ~HIPStream() override;
 
-    virtual float read() override;
-    virtual float write() override;
-    virtual float copy() override;
-    virtual float add() override;
-    virtual float mul() override;
-    virtual float triad() override;
-    virtual T dot() override;
+    float read() override;
+    float write() override;
+    float copy() override;
+    float add() override;
+    float mul() override;
+    float triad() override;
+    T dot() override;
 
-    virtual void init_arrays(T initA, T initB, T initC) override;
+    void init_arrays(T initA, T initB, T initC) override;
     virtual void init_arrays_normdist(T mean, T stddev, bool gpu_init,
                                       std::vector<T>& a, std::vector<T>& b, std::vector<T>& c);
-    virtual void read_arrays(std::vector<T>& a, std::vector<T>& b, std::vector<T>& c) override;
+    void read_arrays(std::vector<T>& a, std::vector<T>& b, std::vector<T>& c) override;
 };
 

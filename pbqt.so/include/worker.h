@@ -129,7 +129,7 @@ class pbqtworker : public rvs::ThreadBase {
   //! Get per GPU-pair bandwidth results from alltoall
   const std::vector<gpu_pair_bw_t>& get_gpu_pair_bw() const { return gpu_pair_bw; }
  protected:
-  virtual void run(void);
+  void run(void) override;
 
  protected:
   //! TRUE if JSON output is required

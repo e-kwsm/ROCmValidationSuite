@@ -45,9 +45,9 @@ namespace rvs {
 class LogNode : public LogNodeBase {
  public:
   explicit LogNode(const char* Name, const LogNodeBase* Parent = nullptr);
-  virtual ~LogNode();
+  ~LogNode() override;
 
-  virtual std::string ToJson(const std::string& Lead = "");
+  std::string ToJson(const std::string& Lead = "") override;
 
  public:
   virtual void Add(LogNodeBase* spChild);

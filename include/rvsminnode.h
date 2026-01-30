@@ -45,13 +45,13 @@ namespace rvs {
 class MinNode : virtual public LogNode {
  public:
   explicit MinNode(const char* Name, int LogLevel, bool Named = false,const LogNodeBase* Parent = nullptr);
-  virtual ~MinNode();
+  ~MinNode() override;
 
-  virtual std::string ToJson(const std::string& Lead = "");
+  std::string ToJson(const std::string& Lead = "") override;
 
  public:
-  void Add(LogNodeBase* spChild);
-  virtual int LogLevel();
+  void Add(LogNodeBase* spChild) override;
+  int LogLevel() override;
  public:
   //! list of child nodes
   std::vector<LogNodeBase*> Child;

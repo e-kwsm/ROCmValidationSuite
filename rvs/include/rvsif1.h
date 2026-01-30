@@ -42,7 +42,7 @@ namespace rvs {
  */
 class if1 : public ifbase {
  public:
-  virtual ~if1();
+  ~if1() override;
   virtual int property_set(const char*, const char*);
   virtual int property_set(const std::string&, const std::string&);
   virtual int run(void);
@@ -53,7 +53,7 @@ class if1 : public ifbase {
   if1(const if1&);
 
   virtual if1& operator= (const if1& rhs);
-  virtual ifbase* clone(void);
+  ifbase* clone(void) override;
 
  protected:
   //! Pointer to module function doing property set
