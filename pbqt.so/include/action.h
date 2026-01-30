@@ -66,9 +66,9 @@ enum class pbqt_json_data_t {
 class pbqt_action : public rvs::actionbase {
  public:
   pbqt_action();
-  virtual ~pbqt_action();
+  ~pbqt_action() override;
 
-  virtual int run(void);
+  int run(void) override;
 
  protected:
   bool get_all_pbqt_config_keys(void);

@@ -72,7 +72,7 @@ class Worker : public rvs::ThreadBase {
   const std::string& get_name(void) { return action_name; }
 
  protected:
-  virtual void run(void);
+  void run(void) override;
 
  protected:
   //! TRUE if JSON output is required

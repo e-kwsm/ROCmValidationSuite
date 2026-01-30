@@ -58,9 +58,9 @@ using std::map;
 class peqt_action: public rvs::actionbase {
  public:
     peqt_action();
-    virtual ~peqt_action();
+    ~peqt_action() override;
 
-    virtual int run(void);
+    int run(void) override;
  protected:
   bool get_all_common_config_keys() override;
 

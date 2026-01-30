@@ -87,7 +87,7 @@ class Worker : public rvs::ThreadBase {
   void do_metric_values(void);
 
  protected:
-  virtual void run(void);
+  void run(void) override;
 
  protected:
   //! Name of the action which initiated monitoring

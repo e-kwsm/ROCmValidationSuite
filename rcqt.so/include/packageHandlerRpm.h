@@ -35,6 +35,6 @@ public:
 	bool pkgrOutputParser(const std::string& s_data, 
 																	package_info& info)	override;
 	std::string getInstalledVersion(const std::string& package) override;	
-	~PackageHandlerRpm(){}
+	~PackageHandlerRpm() override {}
 };
 #endif
