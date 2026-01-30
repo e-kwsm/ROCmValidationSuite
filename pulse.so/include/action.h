@@ -50,8 +50,8 @@ class PulseWorker;
 class pulse_action: public rvs::actionbase {
  public:
     pulse_action();
-    virtual ~pulse_action();
-    virtual int run(void);
+    ~pulse_action() override;
+    int run(void) override;
 
  protected:
     //! pulse cycle rate in Hz

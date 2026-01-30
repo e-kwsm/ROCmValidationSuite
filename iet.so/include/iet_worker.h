@@ -301,7 +301,7 @@ class IETWorker : public rvs::ThreadBase {
     //! get worker job result
     bool get_result(void) { return result; }
  protected:
-    virtual void run(void);
+    void run(void) override;
     bool do_gpu_init_training(int gpuIdx,  uint64_t matrix_size, std::string  iet_ops_type);
     void compute_gpu_stats(void);
     void compute_new_sgemm_freq(float avg_power);

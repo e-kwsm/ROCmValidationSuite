@@ -44,8 +44,8 @@
 class rcqt_action : public rvs::actionbase {
   public:
     rcqt_action();
-    virtual ~rcqt_action();
-    virtual int run(void);
+    ~rcqt_action() override;
+    int run(void) override;
   protected:
     //! json_rcqt_node is json node shared through submodules
     void *json_rcqt_node;

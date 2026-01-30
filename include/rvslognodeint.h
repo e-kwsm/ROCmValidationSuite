@@ -44,9 +44,9 @@ class LogNodeInt : public LogNodeBase {
   explicit LogNodeInt(const char* Name, const int Val,
                       const LogNodeBase* pParent = nullptr);
 
-  virtual ~LogNodeInt();
+  ~LogNodeInt() override;
 
-  virtual std::string ToJson(const std::string& Lead = "");
+  std::string ToJson(const std::string& Lead = "") override;
 
  protected:
   //! Node value

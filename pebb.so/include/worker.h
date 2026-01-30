@@ -106,7 +106,7 @@ class pebbworker : public rvs::ThreadBase {
   void set_destination_memory(const std::string& val) { destination_memory = val; }
 
  protected:
-  virtual void run(void);
+  void run(void) override;
 
  protected:
   //! TRUE if JSON output is required
