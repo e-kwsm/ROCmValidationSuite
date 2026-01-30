@@ -69,8 +69,8 @@ struct gpu_hwmon_info {
 class tst_action: public rvs::actionbase {
  public:
     tst_action();
-    virtual ~tst_action();
-    virtual int run(void);
+    ~tst_action() override;
+    int run(void) override;
 
  protected:
     //! TRUE if JSON output is required

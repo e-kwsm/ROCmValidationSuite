@@ -33,9 +33,9 @@
 class unitactionbase : public rvs::actionbase {
  public:
   unitactionbase();
-  virtual ~unitactionbase();
+  ~unitactionbase() override;
 
-  virtual int run(void);
+  int run(void) override;
 
   void test_get_device_all(std::vector<uint16_t>* pDev, bool* bAll);
   void test_erase_property(const std::string& prop);

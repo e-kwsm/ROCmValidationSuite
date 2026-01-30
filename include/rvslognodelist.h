@@ -45,13 +45,13 @@ namespace rvs {
 class LogListNode : virtual public LogNode {
  public:
   explicit LogListNode(const char* Name, int LogLevel, const LogNodeBase* Parent = nullptr);
-  virtual ~LogListNode();
+  ~LogListNode() override;
 
-  virtual std::string ToJson(const std::string& Lead = "");
+  std::string ToJson(const std::string& Lead = "") override;
 
  public:
-  void Add(LogNodeBase* spChild);
-  virtual int LogLevel();
+  void Add(LogNodeBase* spChild) override;
+  int LogLevel() override;
  public:
   //! list of child nodes
   std::vector<LogNodeBase*> Child;

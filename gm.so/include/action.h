@@ -49,9 +49,9 @@ using std::string;
 class gm_action : public rvs::actionbase {
  public:
     gm_action();
-    virtual ~gm_action();
+    ~gm_action() override;
 
-    virtual int run(void);
+    int run(void) override;
 
  protected:
 /**

@@ -54,8 +54,8 @@
 class pebb_action : public rvs::actionbase {
  public:
   pebb_action();
-  virtual ~pebb_action();
-  virtual int run(void);
+  ~pebb_action() override;
+  int run(void) override;
 
   typedef struct bandwidth{
      string         finalBandwith;

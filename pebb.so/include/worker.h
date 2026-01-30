@@ -93,7 +93,7 @@ class pebbworker : public rvs::ThreadBase {
   void set_b2b(bool _b2b) { b2b = _b2b; }
 
  protected:
-  virtual void run(void);
+  void run(void) override;
 
  protected:
   //! TRUE if JSON output is required

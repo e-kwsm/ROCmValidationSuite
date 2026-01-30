@@ -88,9 +88,9 @@ class mem_action: public rvs::actionbase {
  public:
     mem_action();
 
-    virtual ~mem_action();
+    ~mem_action() override;
 
-    virtual int run(void);
+    int run(void) override;
 
     std::string mem_ops_type;
  protected:

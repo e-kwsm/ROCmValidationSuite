@@ -88,7 +88,7 @@ class pbqtworker : public rvs::ThreadBase {
       return conn_type;
   }
  protected:
-  virtual void run(void);
+  void run(void) override;
 
  protected:
   //! TRUE if JSON output is required

@@ -264,7 +264,7 @@ class MemWorker : public rvs::ThreadBase {
  protected:
     bool do_mem_stress_test(int *error, std::string *err_description);
     void log_mem_test_result(bool mem_test_passed);
-    virtual void run(void);
+    void run(void) override;
     void log_interval_gflops(double gflops_interval);
     void usleep_ex(uint64_t microseconds);
 

@@ -41,8 +41,8 @@
 class smqt_action : public rvs::actionbase {
  public:
     smqt_action();
-    virtual ~smqt_action();
-    virtual int run(void);
+    ~smqt_action() override;
+    int run(void) override;
 
  private:
     ulong  get_property(std::string);

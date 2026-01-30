@@ -203,7 +203,7 @@ class PERFWorker : public rvs::ThreadBase {
     bool do_perf_ramp(int *error, std::string *err_description);
     bool do_perf_stress_test(int *error, std::string *err_description);
     void log_perf_test_result(bool perf_test_passed);
-    virtual void run(void);
+    void run(void) override;
     void log_to_json(const std::string &key, const std::string &value,
                      int log_level);
     void log_interval_gflops(double gflops_interval);

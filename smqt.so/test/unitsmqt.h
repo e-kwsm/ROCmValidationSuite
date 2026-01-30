@@ -31,9 +31,9 @@
 class bar_data :public smqt_action {
  public:
   bar_data();
-  virtual ~bar_data();
-  virtual void on_set_device_gpu_id();
-  virtual void on_bar_data_read();
+  ~bar_data() override;
+  void on_set_device_gpu_id() override;
+  void on_bar_data_read() override;
   std::tuple<ulong, ulong, ulong, ulong> get_bar_sizes();
   std::tuple<ulong, ulong, ulong> get_bar_addr();
   int get_dev_id();

@@ -56,9 +56,9 @@ using std::map;
 class gst_action: public rvs::actionbase {
   public:
     gst_action();
-    virtual ~gst_action();
+    ~gst_action() override;
 
-    virtual int run(void);
+    int run(void) override;
 
   protected:
 

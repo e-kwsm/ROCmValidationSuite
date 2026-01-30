@@ -69,8 +69,8 @@ struct gpu_hwmon_info {
 class iet_action: public rvs::actionbase {
  public:
     iet_action();
-    virtual ~iet_action();
-    virtual int run(void);
+    ~iet_action() override;
+    int run(void) override;
 
  protected:
 

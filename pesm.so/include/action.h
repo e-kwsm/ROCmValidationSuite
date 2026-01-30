@@ -43,9 +43,9 @@
 class pesm_action : public rvs::actionbase {
  public:
   pesm_action();
-  virtual ~pesm_action();
+  ~pesm_action() override;
 
-  virtual int run(void);
+  int run(void) override;
  protected:
   int do_gpu_list(void);
   bool get_all_common_config_keys() override;

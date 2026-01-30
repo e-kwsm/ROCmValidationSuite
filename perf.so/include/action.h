@@ -56,9 +56,9 @@ using std::map;
 class perf_action: public rvs::actionbase {
   public:
     perf_action();
-    virtual ~perf_action();
+    ~perf_action() override;
 
-    virtual int run(void);
+    int run(void) override;
 
     std::string perf_ops_type;
 

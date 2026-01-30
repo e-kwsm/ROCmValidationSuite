@@ -50,17 +50,17 @@ class HIPStream : public Stream<T>
   public:
     HIPStream(const unsigned int, const bool, const int,
         const unsigned int, const unsigned int, const unsigned int);
-    ~HIPStream();
+    ~HIPStream() override;
 
-    virtual float read() override;
-    virtual float write() override;
-    virtual float copy() override;
-    virtual float add() override;
-    virtual float mul() override;
-    virtual float triad() override;
-    virtual T dot() override;
+    float read() override;
+    float write() override;
+    float copy() override;
+    float add() override;
+    float mul() override;
+    float triad() override;
+    T dot() override;
 
-    virtual void init_arrays(T initA, T initB, T initC) override;
-    virtual void read_arrays(std::vector<T>& a, std::vector<T>& b, std::vector<T>& c) override;
+    void init_arrays(T initA, T initB, T initC) override;
+    void read_arrays(std::vector<T>& a, std::vector<T>& b, std::vector<T>& c) override;
 };
 

@@ -220,7 +220,7 @@ class TSTWorker : public rvs::ThreadBase {
     static void blas_callback (bool status, void *user_data);
 
  protected:
-    virtual void run(void);
+    void run(void) override;
     bool do_gpu_init_training(int gpuIdx,  uint64_t matrix_size, std::string  tst_ops_type);
     void compute_gpu_stats(void);
     bool do_thermal_stress(void);

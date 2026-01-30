@@ -116,7 +116,7 @@ class timer : public ThreadBase {
  * @brief Timer internal thread function (called from ThreadBase)
  *
  * */
-  virtual void run() {
+  void run() override {
     do {
       std::chrono::time_point<std::chrono::system_clock> curr_time;
       // wait for time to ellsapse (or for timer to be stopped)
