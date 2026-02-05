@@ -23,6 +23,10 @@
  *
  *******************************************************************************/
 
+class hipEvent_t;
+class hipFunction_t;
+class hipStream_t;
+
 #include <unistd.h>
 #include <string>
 #include <vector>
