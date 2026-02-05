@@ -22,6 +22,7 @@
  * SOFTWARE.
  *
  *******************************************************************************/
+#define __HIP_PLATFORM_AMD__
 #include "include/rvs_util.h"
 #include <vector>
 #include <string>
@@ -32,6 +33,9 @@
 #include "hip/hip_runtime_api.h"
 #include "amd_smi/amdsmi.h"
 
+hipError_t     hipGetDeviceCount (int *deviceId);
+hipError_t 	hipGetDeviceProperties (hipDeviceProp_t *prop, int deviceId);
+hipError_t     hipDeviceGetPCIBusId (char *pciBusId, int len, int device);
 
 /**
  * splits a std::string based on a given delimiter

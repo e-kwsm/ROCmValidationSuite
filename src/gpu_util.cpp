@@ -33,6 +33,8 @@
 #include <iostream>
 #include <sstream>
 
+#define __HIP_PLATFORM_AMD__
+
 #include "amd_smi/amdsmi.h"
 #include "include/gpu_util.h"
 #include "include/rsmi_util.h"
@@ -62,6 +64,9 @@ const std::map<uint16_t, std::string> gpu_dev_map = {
 using std::vector;
 using std::string;
 using std::ifstream;
+
+hipError_t 	hipGetDeviceCount (int *deviceId);
+hipError_t 	hipDeviceGetPCIBusId (char *pciBusId, int len, int device);
 
 int gpu_num_subdirs(const char* dirpath, const char* prefix) {
   int count = 0;

@@ -22,6 +22,7 @@
  * SOFTWARE.
  *
  *******************************************************************************/
+#define __HIP_PLATFORM_AMD__
 #include "include/action.h"
 
 #include <string>

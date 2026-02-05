@@ -18,6 +18,10 @@
 #include <mutex>
 #include <sstream>
 
+class hipEvent_t;
+class hipFunction_t;
+class hipStream_t;
+
 #define VERSION_STRING "3.4"
 #include "include/rvs_util.h"
 #include "include/rvs_memworker.h"

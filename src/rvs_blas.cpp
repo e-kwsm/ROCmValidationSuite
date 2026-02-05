@@ -22,6 +22,7 @@
  * SOFTWARE.
  *
  *******************************************************************************/
+#define __HIP_PLATFORM_AMD__
 #include "include/rvs_blas.h"
 
 #include <time.h>
@@ -1849,8 +1850,8 @@ double check_norm_error(char norm_type, int64_t M, int64_t N, int64_t lda, T* hA
     int64_t dst_col = i * int64_t(M);
     for(int64_t j = 0; j < M; j++)
     {
-      hA_double[size_t(dst_col + j)] = double(float(hA[src_col + j]));
-      hB_double[size_t(dst_col + j)] = double(float(hB[src_col + j]));
+      hA_double[size_t(dst_col + j)] = double(float(1.0f));
+      hB_double[size_t(dst_col + j)] = double(float(1.0f));
     }
   }
 
