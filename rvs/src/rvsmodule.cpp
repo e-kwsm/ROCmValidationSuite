@@ -25,7 +25,7 @@
 #include "include/rvsmodule.h"
 
 #include <dlfcn.h>
-#include <stdio.h>
+#include <cstdio>
 
 #include <utility>
 #include <string>
