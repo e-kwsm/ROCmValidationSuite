@@ -27,8 +27,8 @@
 extern "C" {
 #include <linux/pci.h>
 }
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 #include <iostream>
 #include <algorithm>

@@ -22,9 +22,9 @@
  * SOFTWARE.
  *
  *******************************************************************************/
-#include <stdlib.h>
+#include <cstdlib>
 #include <dirent.h>
-#include <string.h>
+#include <cstring>
 #include <fstream>
 #include <map>
 #include <string>

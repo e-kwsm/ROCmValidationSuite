@@ -24,7 +24,7 @@
  *******************************************************************************/
 #include "include/rvs_module.h"
 
-#include <stdint.h>
+#include <cstdint>
 #include <cstddef>
 
 #include "amd_smi/amdsmi.h"
