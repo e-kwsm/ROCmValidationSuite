@@ -22,6 +22,7 @@
  * SOFTWARE.
  *
  *******************************************************************************/
+#define __HIP_PLATFORM_AMD__
 #include "include/gst_worker.h"
 
 #include <unistd.h>
