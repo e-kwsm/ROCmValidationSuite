@@ -24,8 +24,8 @@
  *******************************************************************************/
 #include "include/rvshsa.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 #include <iostream>
 #include <algorithm>

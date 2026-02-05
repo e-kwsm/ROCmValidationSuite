@@ -24,7 +24,7 @@
  *******************************************************************************/
 #include "include/action.h"
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <sys/utsname.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -32,8 +32,8 @@
 #include <pwd.h>
 #include <grp.h>
 #include <sys/stat.h>
-#include <string.h>
-#include <stdio.h>
+#include <cstring>
+#include <cstdio>
 #include <iostream>
 #include <fstream>
 #include <string>

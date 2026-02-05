@@ -28,7 +28,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include <sys/wait.h>
 #include "include/packageHandlerDeb.h"
