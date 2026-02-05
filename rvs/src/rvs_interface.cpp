@@ -23,7 +23,7 @@
  *
  *******************************************************************************/
 
-#include <string.h>
+#include <cstring>
 #include <include/rvs.h>
 #include <include/rvsinternal.h>
 #include <include/rvsexec.h>

@@ -28,8 +28,8 @@
 #include <sys/stat.h>
 
 #include <unistd.h>
-#include <time.h>
-#include <stdio.h>
+#include <ctime>
+#include <cstdio>
 #include <cstring>
 
 #include <iostream>

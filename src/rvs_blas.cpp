@@ -24,7 +24,7 @@
  *******************************************************************************/
 #include "include/rvs_blas.h"
 
-#include <time.h>
+#include <ctime>
 #include <iostream>
 #include <cmath>
 #include <random>

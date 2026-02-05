@@ -28,9 +28,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/stat.h>
-#include <limits.h>
-#include <string.h>
-#include <stdio.h>
+#include <climits>
+#include <cstring>
+#include <cstdio>
 
 #include <iostream>
 #include <cstddef>         // std::size_t
