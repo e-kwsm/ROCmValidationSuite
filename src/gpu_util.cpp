@@ -31,6 +31,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <sstream>
 
 #include "amd_smi/amdsmi.h"
 #include "include/gpu_util.h"
