@@ -25,9 +25,15 @@
 #include "include/rvs_blas.h"
 #include "include/rvsloglp.h"
 
+<<<<<<< HEAD
 #include <time.h>
 #include <cassert>
 #include <cstring>
+||||||| parent of 2eb6db39 (fix: modernize-deprecated-headers)
+#include <time.h>
+=======
+#include <ctime>
+>>>>>>> 2eb6db39 (fix: modernize-deprecated-headers)
 #include <iostream>
 #include <cmath>
 #include <random>
