@@ -592,7 +592,7 @@ endif()
 # (we want .so i /bin folder to simplify packaging when local smi lib is used)
 # add_custom_command(TARGET rvs_smi_target POST_BUILD
 #   COMMAND rm -f ${CMAKE_BINARY_DIR}/bin/libamd_smi64*
-#   COMMAND ln -s ${CMAKE_BINARY_DIR}/amd_smi-build/libamd_smi64.so ${CMAKE_BINARY_DIR}/bin/libamd_smi64.so
+#   COMMAND "${CMAKE_COMMAND}" -E create_symlink ${CMAKE_BINARY_DIR}/amd_smi-build/libamd_smi64.so ${CMAKE_BINARY_DIR}/bin/libamd_smi64.so
 # )
 
 endif()  # if(NOT EXISTS ${CMAKE_BINARY_DIR}/amd_smi-build/libamd_smi64.so)
@@ -677,9 +677,9 @@ endif()
 add_custom_target(rvs_bin_folder ALL
 COMMAND ${CMAKE_COMMAND} -E make_directory "bin"
 COMMAND rm -f ${CMAKE_BINARY_DIR}/bin/.rvsmodules.config
-COMMAND ln -s ${CMAKE_CURRENT_SOURCE_DIR}/rvs/.rvsmodules.config ${CMAKE_BINARY_DIR}/bin/.rvsmodules.config
+COMMAND "${CMAKE_COMMAND}" -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/rvs/.rvsmodules.config ${CMAKE_BINARY_DIR}/bin/.rvsmodules.config
 COMMAND rm -f ${CMAKE_BINARY_DIR}/bin/conf
-COMMAND ln -s ${CMAKE_CURRENT_SOURCE_DIR}/rvs/conf ${CMAKE_BINARY_DIR}/bin
+COMMAND "${CMAKE_COMMAND}" -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/rvs/conf ${CMAKE_BINARY_DIR}/bin/conf
 WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 COMMENT "Create the bin directory"
 VERBATIM)
@@ -688,9 +688,9 @@ if (RVS_BUILD_TESTS)
   add_custom_target(rvs_bintest_folder ALL
   COMMAND ${CMAKE_COMMAND} -E make_directory ${RVS_BINTEST_FOLDER}
   COMMAND rm -f ${RVS_BINTEST_FOLDER}/.rvsmodules.config
-  COMMAND ln -s ${CMAKE_CURRENT_SOURCE_DIR}/rvs/.rvsmodules.config ${RVS_BINTEST_FOLDER}/.rvsmodules.config
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/rvs/.rvsmodules.config ${RVS_BINTEST_FOLDER}/.rvsmodules.config
   COMMAND rm -f ${RVS_BINTEST_FOLDER}/conf
-  COMMAND ln -s ${CMAKE_CURRENT_SOURCE_DIR}/rvs/conf ${RVS_BINTEST_FOLDER}
+  COMMAND "${CMAKE_COMMAND}" -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/rvs/conf ${RVS_BINTEST_FOLDER}/conf
   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
   COMMENT "Create the bintest directory"
   VERBATIM)
