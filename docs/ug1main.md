@@ -240,7 +240,7 @@ Command line options are summarized in the table below:
 <table>
 <tr><th>Short option</th><th>Long option</th><th> Description</th></tr>
 <tr><td>-a</td><td>--appendLog</td><td>When generating a debug logfile, do not overwrite the content
-of the current log. Use in conjuction with <b>-d</b> and <b>-l</b> options.
+of the current log. Use in conjunction with <b>-d</b> and <b>-l</b> options.
 </td></tr>
 
 <tr><td>-c</td><td>--config</td><td>Specify the test configuration file to use.
@@ -574,7 +574,7 @@ specified, no logging will occur.</td></tr>
 monitor will terminate the RVS process when a bounds violation is encountered on
 any of the metrics specified.</td></tr>
 <tr><td>force</td><td>Bool</td> <td>If 'true'  and terminate key is also 'true'
-the RVS process will terminate immediately. **Note:** this may cose resource leaks
+the RVS process will terminate immediately. **Note:** this may case resource leaks
 within GPUs.</td></tr>
 </table>
 
@@ -877,7 +877,7 @@ Consider this file:
 This file has and invalid entry in **deviceid** key.
 If execute, an error will be reported:
 
-    RVS-PESM: action: act1  invalide 'deviceid' key value: xxx
+    RVS-PESM: action: act1  invalid 'deviceid' key value: xxx
 
 
 ## RCQT Module

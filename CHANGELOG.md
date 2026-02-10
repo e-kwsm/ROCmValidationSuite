@@ -83,7 +83,7 @@ Full documentation for RVS is available at [ROCmValidationSuite.Readme](https://
 ### Added
 
 - Gemm self-check and accuracy-check support for checking consistency & accuracy of gemm output.
-- Trignometric float & random integer matrix data initialization support.
+- Trigonometric float & random integer matrix data initialization support.
 - IET (power) stress test for MI300A.
 - IET (power transition) test for MI300X.
 
