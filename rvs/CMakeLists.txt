@@ -39,7 +39,7 @@ project ( ${RVS_TARGET} )
 
 message(STATUS "MODULE: ${RVS}")
 
-add_compile_options(-pthread)
+find_package(Threads REQUIRED)
 add_compile_options(-Wall)
 add_compile_options(-DRVS_OS_TYPE_NUM=${RVS_OS_TYPE_NUM})
 
@@ -129,7 +129,7 @@ set(PROJECT_LINK_LIBS libdl.so libpthread.so ${LIBPCI_TARGET} ${YAML_CPP_TARGET}
 ## define target
 add_executable(${RVS_TARGET} src/rvs.cpp)
 target_link_libraries(${RVS_TARGET} rvslib -fopenmp
-	${ROCBLAS_LIB} ${AMD_SMI_LIB} ${CORE_RUNTIME_TARGET} ${ROCM_CORE} ${PROJECT_LINK_LIBS} ${HIPRAND_LIB} ${HIPBLASLT_LIB})
+	${ROCBLAS_LIB} ${AMD_SMI_LIB} ${CORE_RUNTIME_TARGET} ${ROCM_CORE} ${PROJECT_LINK_LIBS} ${HIPRAND_LIB} ${HIPBLASLT_LIB} Threads::Threads)
 add_dependencies(${RVS_TARGET} rvslib)
 
 install(TARGETS ${RVS_TARGET}
