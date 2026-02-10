@@ -49,7 +49,7 @@ add_definitions(-DLITTLEENDIAN_CPU=1)
 add_definitions(-DHSA_LARGE_MODEL=)
 add_definitions(-DHSA_DEPRECATED=)
 
-add_compile_options(-pthread)
+find_package(Threads REQUIRED)
 add_compile_options(-Wall )
 if (RVS_COVERAGE)
   add_compile_options(-o0 -fprofile-arcs -ftest-coverage)
@@ -152,7 +152,7 @@ add_library( ${RVS_TARGET} SHARED ${SOURCES})
 set_target_properties(${RVS_TARGET} PROPERTIES
         SUFFIX .so.${LIB_VERSION_STRING}
         LIBRARY_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
-target_link_libraries(${RVS_TARGET} ${PROJECT_LINK_LIBS} ${CORE_RUNTIME_TARGET})
+target_link_libraries(${RVS_TARGET} ${PROJECT_LINK_LIBS} ${CORE_RUNTIME_TARGET} Threads::Threads)
 if(TRANSFERBENCH_IBVERBS_INC_DIR)
   target_link_libraries(${RVS_TARGET} ${CMAKE_DL_LIBS})
 endif()

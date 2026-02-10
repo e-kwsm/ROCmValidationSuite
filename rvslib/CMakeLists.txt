@@ -38,7 +38,7 @@ project ( ${RVS_TARGET} )
 
 message(STATUS "MODULE: ${RVS}")
 
-add_compile_options(-pthread)
+find_package(Threads REQUIRED)
 add_compile_options(-Wall )
 add_compile_options(-fPIC)
 add_compile_options(-DRVS_OS_TYPE_NUM=${RVS_OS_TYPE_NUM})
@@ -175,9 +175,9 @@ set_target_properties(${RVS_TARGET}
  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 target_compile_options(${RVS_TARGET} PRIVATE -fopenmp)
 if(FETCH_ROCMPATH_FROM_ROCMCORE)
-  target_link_libraries(${RVS_TARGET} ${AMD_SMI_LIB} ${ROCM_CORE} -fopenmp)
+  target_link_libraries(${RVS_TARGET} ${AMD_SMI_LIB} ${ROCM_CORE} -fopenmp Threads::Threads)
 else()
-  target_link_libraries(${RVS_TARGET} ${AMD_SMI_LIB} -fopenmp)
+  target_link_libraries(${RVS_TARGET} ${AMD_SMI_LIB} -fopenmp Threads::Threads)
 endif()
 ## Install shared library librvslib.so
 add_custom_command(TARGET ${RVS_TARGET} POST_BUILD
