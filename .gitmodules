@@ -7,3 +7,6 @@
 [submodule "rvs_rblas-src"]
 	path = rvs_rblas-src
 	url = https://github.com/ROCm/rocBLAS.git
+[submodule "rvs_smi-src"]
+	path = rvs_smi-src
+	url = https://github.com/ROCm/rocm_smi_lib.git
