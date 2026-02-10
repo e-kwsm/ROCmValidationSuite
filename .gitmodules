@@ -4,3 +4,6 @@
 [submodule "mxDataGenerator-src"]
 	path = mxDataGenerator-src
 	url = https://github.com/ROCm/mxDataGenerator.git
+[submodule "rvs_rblas-src"]
+	path = rvs_rblas-src
+	url = https://github.com/ROCm/rocBLAS.git
