@@ -38,7 +38,6 @@ project ( ${RVS_TARGET} )
 
 message(STATUS "MODULE: ${RVS}")
 
-add_compile_options(-pthread)
 add_compile_options(-Wall )
 
 if (RVS_COVERAGE)
@@ -99,6 +98,8 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${HIP_HCC_BUILD_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ASAN_LD_FLAGS}")
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${ASAN_LD_FLAGS}")
 
+find_package(Threads REQUIRED)
+
 if(BUILD_ADDRESS_SANITIZER)
   execute_process(COMMAND ${CMAKE_CXX_COMPILER} --print-file-name=libclang_rt.asan-x86_64.so
             OUTPUT_VARIABLE ASAN_LIB_FULL_PATH)
@@ -121,7 +122,7 @@ include_directories(./ ../ ${ROCM_SMI_INC_DIR} ${YAML_CPP_INCLUDE_DIR})
 # Add directories to look for library files to link
 link_directories(${RVS_LIB_DIR} ${ROCM_SMI_LIB_DIR} ${ASAN_LIB_PATH} ${ROCM_SMI_LIB} ${HIPRAND_LIB_DIR} ${ROCRAND_LIB_DIR} ${HIPBLASLT_LIB_DIR})
 ## additional libraries
-set (PROJECT_LINK_LIBS rvslib libpthread.so ${LIBPCI_TARGET} libm.so)
+set (PROJECT_LINK_LIBS rvslib ${LIBPCI_TARGET} libm.so Threads::Threads)
 
 ## define source files
 set(SOURCES  src/rvs_module.cpp src/action.cpp src/worker.cpp)
@@ -132,7 +133,7 @@ add_library( ${RVS_TARGET} SHARED ${SOURCES})
 set_target_properties(${RVS_TARGET} PROPERTIES
         SUFFIX .so.${LIB_VERSION_STRING}
         LIBRARY_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
-target_link_libraries(${RVS_TARGET} ${PROJECT_LINK_LIBS} ${ROCM_SMI_LIB})
+target_link_libraries(${RVS_TARGET} ${PROJECT_LINK_LIBS} ${ROCM_SMI_LIB} Threads::Threads)
 add_dependencies(${RVS_TARGET} rvslib)
 
 add_custom_command(TARGET ${RVS_TARGET} POST_BUILD
