@@ -84,7 +84,7 @@ rvs_status_t rvs_session_create(rvs_session_id_t *session_id, rvs_session_callba
 
   unsigned int session_idx;
 
-  if ((NULL == session_id) || (NULL == session_cb)) {
+  if ((nullptr == session_id) || (nullptr == session_cb)) {
     return RVS_STATUS_INVALID_ARGUMENT;
   }
 
@@ -118,7 +118,7 @@ rvs_status_t rvs_session_set_property(rvs_session_id_t session_id, rvs_session_p
 
   unsigned int session_idx;
 
-  if (NULL == session_property) {
+  if (nullptr == session_property) {
     return RVS_STATUS_INVALID_ARGUMENT;
   }
 

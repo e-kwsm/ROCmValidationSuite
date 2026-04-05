@@ -509,7 +509,7 @@ TEST_F(PcieCapsTest, pcie_caps) {
   // 2. method is PCI_ACCESS_SYS_BUS_PCI and base[0] = 0
   exp_string = "";
   test_access->method = PCI_ACCESS_SYS_BUS_PCI;
-  rvs_pci_get_param_return_value = 0;
+  rvs_pci_get_param_return_value = nullptr;
   get_kernel_driver(test_dev, buff);
   EXPECT_STREQ(buff, exp_string.c_str());
   // 3. method is PCI_ACCESS_SYS_BUS_PCI and base = 1

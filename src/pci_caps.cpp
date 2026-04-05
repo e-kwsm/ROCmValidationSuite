@@ -68,7 +68,7 @@ extern "C" {
 unsigned int pci_dev_find_cap_offset(struct pci_dev *dev, unsigned char cap,
         unsigned char type) {
     struct pci_cap * pcap = dev->first_cap;
-    while (pcap != NULL) {
+    while (pcap != nullptr) {
         if (pcap->id == cap && pcap->type == type)
             return pcap->addr;
         pcap = pcap->next;

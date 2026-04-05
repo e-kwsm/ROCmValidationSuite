@@ -711,14 +711,14 @@ int rvs::hsa::Allocate(int SrcAgent, int DstAgent, size_t Size,
         RVSHSATRACE_
         status = hsa_amd_agents_allow_access(1,
                                             &agent_list[SrcAgent].agent,
-                                            NULL,
+                                            nullptr,
                                             dstbuff);
       } 
       if(agent_list[DstAgent].agent_device_type == "GPU"){
         RVSHSATRACE_
         status = hsa_amd_agents_allow_access(1,
                                             &agent_list[DstAgent].agent,
-                                            NULL,
+                                            nullptr,
                                             srcbuff);
       }
       if ((status != HSA_STATUS_SUCCESS)) {
@@ -828,7 +828,7 @@ int rvs::hsa::SendTraffic(uint32_t SrcNode, uint32_t DstNode,
 
       // Create a signal to wait on copy operation
       if (HSA_STATUS_SUCCESS !=
-          (status = hsa_signal_create(1, 0, NULL, &signal_fwd))) {
+          (status = hsa_signal_create(1, 0, nullptr, &signal_fwd))) {
         print_hsa_status(__FILE__, __LINE__, __func__,
             "hsa_signal_create()",
             status);
@@ -855,7 +855,7 @@ int rvs::hsa::SendTraffic(uint32_t SrcNode, uint32_t DstNode,
 
         // Create a signal to wait on for reverse copy operation
         if (HSA_STATUS_SUCCESS !=
-            (status = hsa_signal_create(1, 0, NULL, &signal_rev))) {
+            (status = hsa_signal_create(1, 0, nullptr, &signal_rev))) {
           print_hsa_status(__FILE__, __LINE__, __func__,
               "hsa_signal_create()",
               status);
@@ -876,7 +876,7 @@ int rvs::hsa::SendTraffic(uint32_t SrcNode, uint32_t DstNode,
                                             dst_ptr_fwd, agent_list[dst_ix_fwd].agent,
                                             src_ptr_fwd, agent_list[src_ix_fwd].agent,
                                             Size,
-                                            0, NULL, signal_fwd)))
+                                            0, nullptr, signal_fwd)))
       print_hsa_status(__FILE__, __LINE__, __func__,
           "hsa_amd_memory_async_copy()",
           status);
@@ -887,7 +887,7 @@ int rvs::hsa::SendTraffic(uint32_t SrcNode, uint32_t DstNode,
       if (HSA_STATUS_SUCCESS != (status = hsa_amd_memory_async_copy(
               dst_ptr_rev, agent_list[dst_ix_rev].agent,
               src_ptr_rev, agent_list[src_ix_rev].agent, Size,
-              0, NULL, signal_rev)))
+              0, nullptr, signal_rev)))
         print_hsa_status(__FILE__, __LINE__, __func__,
             "hsa_amd_memory_async_copy()",
             status);

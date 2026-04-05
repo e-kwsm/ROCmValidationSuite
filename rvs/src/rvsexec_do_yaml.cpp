@@ -558,7 +558,7 @@ int rvs::exec::do_yaml(yaml_data_type_t data_type, const std::string& data) {
 
   int sts = 0;
   YAML::Node config;
-  rvs_results_t result = {RVS_STATUS_FAILED, RVS_SESSION_STATE_COMPLETED, (const char *)NULL};
+  rvs_results_t result = {RVS_STATUS_FAILED, RVS_SESSION_STATE_COMPLETED, (const char *)nullptr};
 
   if(yaml_data_type_t::YAML_FILE == data_type) {
 
