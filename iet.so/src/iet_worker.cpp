@@ -510,7 +510,7 @@ void RunKernel(hipEvent_t& start, hipEvent_t& stop, T* __restrict p, T* __restri
 
 void IETWorker::bandwidthThread(void)
 {
-  hipStream_t stream = 0;
+  hipStream_t stream = nullptr;
   std::vector<uint32_t*> bufs;
 
   uint32_t* r{};

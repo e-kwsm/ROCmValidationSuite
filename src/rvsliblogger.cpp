@@ -87,7 +87,7 @@ bool doesFolderExist(const std::string &fname){
   auto loc = fname.find_last_of('/');
   auto dirName = fname.substr(0,loc);
   DIR* dir = opendir(dirName.c_str());
-  if (dir == NULL) {
+  if (dir == nullptr) {
     // try creating directory, this doesnt exist. if fails return
      std::string command{"mkdir -p "};
      command += dirName;     

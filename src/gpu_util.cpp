@@ -72,7 +72,7 @@ int gpu_num_subdirs(const char* dirpath, const char* prefix) {
 
   dirp = opendir(dirpath);
   if (dirp) {
-    while ((dir = readdir(dirp)) != 0) {
+    while ((dir = readdir(dirp)) != nullptr) {
       if ((strcmp(dir->d_name, ".") == 0) ||
         (strcmp(dir->d_name, "..") == 0))
         continue;
@@ -450,7 +450,7 @@ bool gpu_check_if_mcm_die (int idx) {
   amdsmi_status_t ret;
   uint64_t val =0 , time_stamp;
   float cntr_resolution;
-  amdsmi_processor_handle smi_hdl = 0;
+  amdsmi_processor_handle smi_hdl = nullptr;
 
   if (gpu_hip_to_smi_hdl(idx, &smi_hdl)) {
     return false;

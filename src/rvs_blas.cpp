@@ -1336,7 +1336,7 @@ void rvs_blas::generate_random_matrix_data(void) {
     else {
 
       size_t i;
-      uint64_t nextr = (uint64_t) time(NULL);
+      uint64_t nextr = (uint64_t) time(nullptr);
 
       //SGEMM (float fp32_r)
       if((ops_type == "sgemm") || (data_type == "fp32_r")) {

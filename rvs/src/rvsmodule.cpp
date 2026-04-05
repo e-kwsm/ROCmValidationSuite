@@ -201,7 +201,7 @@ rvs::module* rvs::module::find_create_module(const char* name) {
       snprintf(buff, sizeof(buff),
                "module '%s' not found in configuration.", name);
       rvs::logger::Err(buff, MODULE_NAME_CAPS);
-      return NULL;
+      return nullptr;
     }
 
     // open module .so library
@@ -254,14 +254,14 @@ rvs::module* rvs::module::find_create_module(const char* name) {
           snprintf(buff, sizeof(buff),
               "reason: '%s'", load_err.c_str());
           rvs::logger::Err(buff, MODULE_NAME_CAPS);
-          return NULL;  // fail
+          return nullptr;  // fail
         }
     }
     // create module object
     m = new rvs::module(name, psolib);
     if (!m) {
       dlclose(psolib);
-      return NULL;
+      return nullptr;
     }
 
     // initialize API function pointers

@@ -58,7 +58,7 @@ rvs::actionbase::actionbase() {
   property_device.clear();
   property_device_index.clear();
   callback = nullptr;
-  user_param = 0u;
+  user_param = nullptr;
 }
 
 /**
