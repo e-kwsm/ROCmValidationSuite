@@ -55,7 +55,7 @@ amdsmi_status_t  smi_dev_ind_get(uint64_t bdfid, amdsmi_processor_handle* pdv_hd
   assert(pdv_hdl != nullptr);
   uint64_t _bdfid = 0;
   amdsmi_status_t ret;
-  *pdv_hdl = 0;
+  *pdv_hdl = nullptr;
   //if (smipci_to_hdl_map.empty())
   //  smi_pci_hdl_mapping();
   auto smi_mp = get_smi_pci_map();
